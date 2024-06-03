@@ -1,0 +1,287 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #00bfff, #ffdab9, #ffe4b5);
+    margin: 0;
+    padding: 0;  
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #faf0e6; 
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 8px solid #008080; 
+}
+
+h1 {
+    text-align: center;
+    color: #008080;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 45px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px; 
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: rgb(249, 249, 249);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid;
+    border: 3px solid #025757;
+    border-style: double;
+}
+
+a {
+    text-decoration: none;
+    color: #008080;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: #008080;
+    color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.add-task-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #008080;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.add-task-link i {
+    margin-right: 5px;
+}
+
+.add-task-link:hover {
+    background-color: #025757;
+}
+
+.sorting-dropdown {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sorting-dropdown select {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #008080;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sorting-dropdown select:hover {
+    background-color: #025757;
+}
+
+.delete-button {
+    margin-left: auto;
+    order: 3;
+}
+
+.fa-check {
+    color: rgba(0, 0, 255, 0.2);
+
+}
+
+.completed-task {
+    opacity: 0.5;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="submit"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #008080;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+input[type="submit"]:hover {
+    background-color: #025757;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #008080;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+} 
+
+.button {
+    border: 3px solid #008080; 
+    border-radius: 13px; 
+    background-color: #faf0e6;
+    border-style: double;
+}
+
+span {
+    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 19px;
+    padding: 5px;
+    margin-right: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+
+
+
+/* Dark mode styles */
+.dark-mode {
+    background: linear-gradient(to right, #333, #333);
+    color: #fff;
+}
+
+.dark-mode .container {
+    background-color: #444;
+    color: #fff;
+}
+
+.dark-mode a {
+    color: #025757;
+}
+
+.dark-mode a:hover {
+    background-color: #008080;
+    color: #fff;
+}
+
+.dark-mode .add-task-link {
+    background-color: #025757;
+    color: #fff;
+}
+
+.dark-mode .add-task-link:hover {
+    background-color: #008080;
+}
+
+.dark-mode .sorting-dropdown select {
+    background-color: #025757;
+    color: #fff;
+}
+
+.dark-mode .sorting-dropdown select:hover {
+    background-color: #008080;
+}
+
+.dark-mode input[type="submit"] {
+    background-color: #025757;
+    color: #fff;
+}
+
+.dark-mode input[type="submit"]:hover {
+    background-color: #008080;
+}
+
+.dark-mode li {
+    background-color: #555;
+}
+
+.dark-mode input {
+    color: white;
+    background-color: #555;
+}
+
+.dark-mode label {
+    color: white;
+}
+
+.dark-mode .container {
+    border: 8px solid #025757;
+}
+
+.dark-mode h1 {
+    color: #016C6C;
+}
+
+.dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.dark-mode-toggle button {
+    background-color: rgb(249, 249, 249);
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 15px; 
+    cursor: pointer;
+    border: 3px solid #008080; 
+}
+
+.dark-mode-toggle button:hover {
+    background-color: #bfbfbf;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .dark-mode-toggle button {
+    background-color: #025757;
+    color: white;
+}
+
+.dark-mode .dark-mode-toggle button:hover {
+    background-color: #008080; 
+    color: white;
+}
+
+.dark-mode .button {
+    color: white;
+    background-color: #025757;
+}
+
+.dark-mode .back-link {
+    color: #fff;
+}

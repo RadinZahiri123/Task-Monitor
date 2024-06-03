@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="dark-mode-toggle">
+        <button onclick="toggleDarkMode()">
+            <i class="fas fa-moon"></i> Dark Mode
+        </button>
+    </div>
+    
+    <div class="container">
+        <h1>Task List</h1>
+        {% if session['username'] %}
+        <div style="text-align: right;">
+            <a href="{{ url_for('logout') }}" class="button">Logout</a>
+        </div>
+        {% endif %}
+
+        <div class="sorting-dropdown">
+            <select id="sortCriteria" onchange="sortTasks(this.value)">
+                <option value="name">Sort by Name</option>
+                <option value="date">Sort by Date</option>
+                <option value="status">Sort by Status</option>
+            </select>
+        </div>
+
+        <ul>
+            {% if tasks %}
+            {% for task in tasks %}
+            <li id="task-{{ task.id }}" class="{% if task.completed %}completed-task{% endif %}" draggable="true"
+                ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)">
+                <span>{{ task.name }}, {{ task.date }}</span>
+                <a href="/edit_task/{{ task.id }}"><i class="fas fa-edit"></i></a>
+                <a href="/delete_task/{{ task.id }}" class="delete-button"><i class="fas fa-trash"></i></a>
+                <!-- Update the link for toggling completion -->
+                <a href="{{ url_for('toggle_complete', task_id=task.id) }}"><i class="fas fa-check"></i></a>
+            </li>
+            {% endfor %}
+            {% else %}
+            <li>No tasks available</li>
+            {% endif %}
+        </ul>
+
+        <a class="add-task-link" href="/add_task"><i class="fas fa-plus"></i> Add Task</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

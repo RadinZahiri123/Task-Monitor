@@ -1,3 +1,4 @@
+import psycopg2
 from flask import Flask, flash, render_template, request, redirect, url_for, session
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
@@ -6,7 +7,7 @@ import os
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('my_secret_key')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C:/Users/radin/OneDrive/Pictures/Screenshots 1/JAVA/SoftwareDevelopment/TaskListTemp/instance/mydatabase.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C:/Projects/TaskMonitor/instance/mydatabase.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -71,13 +72,29 @@ def register():
         email = request.form['email']
         password = request.form['password']
 
+        # Check if the email or username already exists
+        existing_user = User.query.filter((User.username == username) | (User.email == email)).first()
+        if existing_user:
+            flash('Username or email already exists. Please use a different one.', 'error')
+            return render_template('Registration.html')
+
+        # Hash the password and create a new user
         password_hash = generate_password_hash(password)
         new_user = User(username=username, email=email, password_hash=password_hash)
-        db.session.add(new_user)
-        db.session.commit()
+
+        try:
+            db.session.add(new_user)
+            db.session.commit()
+        except Exception as e:
+            db.session.rollback()
+            flash('An error occurred while registering. Please try again.', 'error')
+            return render_template('Registration.html')
+
+        flash('Registration successful! Please log in.', 'success')
         return redirect(url_for('login'))
 
     return render_template('Registration.html')
+
 
 @app.route('/logout')
 def logout():

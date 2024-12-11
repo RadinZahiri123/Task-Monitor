@@ -1,5 +1,5 @@
 # Task Monitor 
-#### Video Demo:  <https://youtu.be/on9F1VDcUok> 
+
 #### Description:  
 
 My project, "Task Monitor", is a web application I created on VS code, using python, html, CSS, and JavaScript. It's designed for a diverse user base, with a focus on students and busy adults, providing an accessible solution for organizing tasks and commitments. This application aims to relieve the challenge of remembering and coordinating multiple tasks, such as assignments, exams, meetings, and appointments, through a centralized Web App platform.  

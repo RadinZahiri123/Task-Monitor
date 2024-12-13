@@ -2,7 +2,7 @@
 
 #### Description:  
 
-My project, "Task Monitor", is a web application I created on VS code, using python, html, CSS, and JavaScript. It's designed for a diverse user base, with a focus on students and busy adults, providing an accessible solution for organizing tasks and commitments. This application aims to relieve the challenge of remembering and coordinating multiple tasks, such as assignments, exams, meetings, and appointments, through a centralized Web App platform.  
+My project, "Task Monitor", is a web application I created on VS code, using Python, HTML, CSS, and JavaScript. It's designed for a diverse user base, with a focus on students and busy adults, providing an accessible solution for organizing tasks and commitments. This application aims to relieve the challenge of remembering and coordinating multiple tasks, such as assignments, exams, meetings, and appointments, through a centralized Web App platform.  
 
 The functionality of this program includes activity, input, storage, editing, and sorting. Users can enter tasks, events, and appointments with details like name and date, stored in a local database for easy access. When the user wishes to delete a task, they can simply click on the trash icon, and it will completely erase all the data related to that task from the database. Users can manage and modify tasks based on their ever-changing schedules, ensuring flexibility in task handling. Tasks can be organized based on time, status, or date, depending on which sorting option the user prefers. 
 
